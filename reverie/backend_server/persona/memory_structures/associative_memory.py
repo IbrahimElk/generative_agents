@@ -302,13 +302,14 @@ class AssociativeMemory:
     return ret_str
 
 
+  # returns set of nodes for which the spo contents correpsonds to the keywords of the thought (nodes). 
   def retrieve_relevant_thoughts(self, s_content, p_content, o_content): 
     contents = [s_content, p_content, o_content]
 
     ret = []
-    for i in contents: 
-      if i in self.kw_to_thought: 
-        ret += self.kw_to_thought[i.lower()]
+    for content in contents: 
+      if content in self.kw_to_thought: 
+        ret += self.kw_to_thought[content.lower()]
 
     ret = set(ret)
     return ret
@@ -337,8 +338,23 @@ class AssociativeMemory:
 
 
 
+if __name__ == "__main__":
+  x = f"../../../../environment/frontend_server/storage/July1_the_ville_isabella_maria_klaus-step-3-1/personas/Isabella Rodriguez/bootstrap_memory/associative_memory"
+  a_mem = AssociativeMemory(x)
+  a_mem.add_event()
+  a_mem.add_thought()
+  a_mem.add_chat()
 
+  a_mem.get_summarized_latest_events()
 
+  a_mem.get_str_seq_events()
+  a_mem.get_str_seq_thoughts()
+  a_mem.get_str_seq_chats()
+  
+  a_mem.retrieve_relevant_thoughts()
+  a_mem.retrieve_relevant_events()
+  
+  a_mem.get_last_chat()
 
 
 

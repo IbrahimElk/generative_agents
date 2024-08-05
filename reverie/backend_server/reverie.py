@@ -34,7 +34,7 @@ from global_methods import *
 from utils import *
 from maze import *
 from persona.persona import *
-
+from utils import fs_storage
 ##############################################################################
 #                                  REVERIE                                   #
 ##############################################################################
@@ -129,6 +129,7 @@ class ReverieServer:
 
       self.personas[persona_name] = curr_persona
       self.personas_tile[persona_name] = (p_x, p_y)
+      #TODO: Te begrijpen!
       self.maze.tiles[p_y][p_x]["events"].add(curr_persona.scratch
                                               .get_curr_event_and_desc())
 
@@ -610,6 +611,7 @@ if __name__ == '__main__':
 
   rs = ReverieServer(origin, target)
   rs.open_server()
+  # rs.start_server(10)
 
 
 

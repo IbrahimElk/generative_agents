@@ -109,12 +109,16 @@ class MemoryTree:
 
 
 if __name__ == '__main__':
-  x = f"../../../../environment/frontend_server/storage/the_ville_base_LinFamily/personas/Eddy Lin/bootstrap_memory/spatial_memory.json"
+  # x = f"../../../../environment/frontend_server/storage/the_ville_base_LinFamily/personas/Eddy Lin/bootstrap_memory/spatial_memory.json"
+  x = f"../../../../environment/frontend_server/storage/July1_the_ville_isabella_maria_klaus-step-3-1/personas/Isabella Rodriguez/bootstrap_memory/spatial_memory.json"
+
   x = MemoryTree(x)
-  x.print_tree()
+  # x.print_tree()
 
-  print (x.get_str_accessible_sector_arenas("dolores double studio:double studio"))
-
+  # print(x.get_str_accessible_sector_arenas("dolores double studio:double studio"))
+  print(x.get_str_accessible_sectors("the Ville"))
+  print(x.get_str_accessible_sector_arenas("the Ville:Isabella Rodriguez's apartment"))
+  print(x.get_str_accessible_arena_game_objects("the Ville:Isabella Rodriguez's apartment:main room"))
 
 
 

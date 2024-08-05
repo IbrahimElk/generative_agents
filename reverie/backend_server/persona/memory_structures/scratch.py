@@ -10,7 +10,7 @@ import sys
 sys.path.append('../../')
 
 from global_methods import *
-
+ 
 class Scratch: 
   def __init__(self, f_saved): 
     # PERSONA HYPERPARAMETERS
@@ -161,7 +161,6 @@ class Scratch:
     if check_if_file_exists(f_saved): 
       # If we have a bootstrap file, load that here. 
       scratch_load = json.load(open(f_saved))
-
       self.vision_r = scratch_load["vision_r"]
       self.att_bandwidth = scratch_load["att_bandwidth"]
       self.retention = scratch_load["retention"]
@@ -616,22 +615,30 @@ class Scratch:
       ret += f"{hour:02}:{minute:02} || {row[0]}\n"
     return ret
 
+if __name__ == "__main__":
+  x = f"../../../../environment/frontend_server/storage/July1_the_ville_isabella_maria_klaus-step-3-1/personas/Isabella Rodriguez/bootstrap_memory/scratch.json"
+  scr = Scratch(x)
 
+  x1 = scr.get_f_daily_schedule_index()
+  x2 = scr.get_f_daily_schedule_hourly_org_index()
+  x3 = scr.get_str_iss()
+  x5 = scr.get_curr_event()
+  x6 = scr.get_curr_event_and_desc()
+  x7 = scr.get_curr_obj_event_and_desc()
+  x8 = scr.act_check_finished()
+  x9 = scr.act_summarize()
+  x10 = scr.act_summary_str()
+  x11 = scr.get_str_daily_schedule_summary()
+  x12 = scr.get_str_daily_schedule_hourly_org_summary()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  print(x1)
+  print(x2)
+  print(x3)
+  print(x5)
+  print(x6)
+  print(x7)
+  print(x8)
+  print(x9)
+  print(x10)
+  print(x11)
+  print(x12)

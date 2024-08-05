@@ -274,6 +274,29 @@ def safe_generate_response(prompt,
 
 
 def get_embedding(text, model="text-embedding-ada-002"):
+  """
+    OpenAI's text embeddings measure the relatedness of text strings. Embeddings are commonly used for:
+
+    Search (where results are ranked by relevance to a query string)
+    Clustering (where text strings are grouped by similarity)
+    Recommendations (where items with related text strings are recommended)
+    Anomaly detection (where outliers with little relatedness are identified)
+    Diversity measurement (where similarity distributions are analyzed)
+    Classification (where text strings are classified by their most similar label)
+
+    An embedding is a vector (list) of floating point numbers. 
+    The distance between two vectors measures their relatedness. 
+    Small distances suggest high relatedness and large distances suggest low relatedness.
+
+  Args:
+      text (_type_): _description_
+      model (str, optional): _description_. Defaults to "text-embedding-ada-002".
+
+  Returns:
+      _type_: _description_
+  """
+
+
   text = text.replace("\n", " ")
   if not text: 
     text = "this is blank"

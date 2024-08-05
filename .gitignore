@@ -3,6 +3,12 @@ frontend_server/settings/local.py
 storage/*
 static_dirs/*
 
+.vscode
+
+environment/frontend_server/storage/none/*
+environment/frontend_server/storage/nonepls/*
+environment/frontend_server/storage/okewow/*
+
 !storage/base_the_ville_isabella_maria_klaus/*
 !storage/base_the_ville_n25/*
 
